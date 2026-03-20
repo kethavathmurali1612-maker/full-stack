@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/kethavathmurali1612-maker/full-stack.git'
-            }
-        }
-
         stage('Build Frontend Image') {
             steps {
                 sh 'docker build -t kethavathmurali/2023bcd0008_frontend ./frontend'
