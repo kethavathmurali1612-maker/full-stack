@@ -1,7 +1,17 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Build Frontend Image') {
             steps {
@@ -17,8 +27,7 @@ pipeline {
 
         stage('Push to DockerHub') {
             steps {
-
-               sh 'docker login -u kethavathmurali -p Mur@li12345'
+                sh 'docker login -u kethavathmurali -p Mur@li12345'
                 sh 'docker push kethavathmurali/2023bcd0008_frontend'
                 sh 'docker push kethavathmurali/2023bcd0008_backend'
             }
