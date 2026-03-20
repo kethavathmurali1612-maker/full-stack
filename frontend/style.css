@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  background: linear-gradient(-45deg, #ff512f, #dd2476, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  animation: bg 10s infinite;
+}
+
+@keyframes bg {
+  0% { background-position: 0% }
+  50% { background-position: 100% }
+  100% { background-position: 0% }
+}
+
+.container {
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 10px;
+}
